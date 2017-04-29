@@ -4,8 +4,12 @@ also_reload('lib/**/*.rb')
 require("./lib/cd")
 
 get('/') do
-  @cds = Cd.all()
   erb(:index)
+end
+
+get('/cds') do
+  @cds = Cd.all()
+  erb(:cds)
 end
 
 post("/cd") do
