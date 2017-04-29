@@ -1,0 +1,14 @@
+<ul>
+  <% @cds.each() do |cd| %>
+  <li><%= cd.cd()%></li>
+<% end %>
+</ul>
+
+
+<form action="/cd" method="post">
+  <label for="cd">Enter in a cd that you own to catalog.</label>
+  <input type="text" name="cd">
+
+  <button type="submit">Save this CD</button>
+
+</form>
