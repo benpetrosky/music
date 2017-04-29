@@ -3,10 +3,24 @@ class Cd
 
   define_method(:initialize) do |cd|
     @cd = cd
-  end
+    @id = @@all_cds.length().+(1)
 
+  end
   define_method(:cd) do
     @cd
+  end
+  define_method(:id)do
+    @id
+  end
+
+  define_singleton_method(:find) do |identification|
+    found_cd = nil
+    @@all_cds.each() do |cd|
+      if cd.id().eql?(identification.to_i())
+        found_cd = cd
+      end
+    end
+    found_cd
   end
 
   define_singleton_method(:all) do
